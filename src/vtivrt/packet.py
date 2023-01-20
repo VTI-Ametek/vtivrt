@@ -626,7 +626,7 @@ class VtiVrtPacket(): # pylint: disable=too-many-instance-attributes
         self.info_class = info_class
         self.packet_class = packet_class
         if data is None:
-            data = []
+            self.data = []
         else:
             self.data = data
         self.trailer = trailer
@@ -638,7 +638,7 @@ class VtiVrtPacket(): # pylint: disable=too-many-instance-attributes
     def __repr__(self):
         return f'''VtiVrtPacket(stream_id={self.stream_id}, count={self.count}, packet_type={str(self.packet_type)},
              tsi={str(self.tsi)}, tsf={str(self.tsf)}, tsm={self.tsm}, timestamp={self.timestamp},
-             oui={hex(self.oui)}, info_class={str(self.info_class)}, packet_class={str(self.packet_class)},
+             oui={hex(self.oui) if self.oui is not None else None}, info_class={str(self.info_class) if self.info_class is not None else None}, packet_class={str(self.packet_class) if self.packet_class is not None else None},
              data={pprint.pformat(self.data, compact=True)},
              trailer={pprint.pformat(self.trailer, compact=True)},
              context={pprint.pformat(self.context, compact=True)})'''
