@@ -25,7 +25,7 @@ The main classes of interest exposed by vtivrt are:
 Installing
 ----------
 
-vtivrt is available on PyPI:
+vtivrt is available on `PyPI <https://pypi.org/project/vtivrt>`_:
 
 .. code-block:: sh
 
